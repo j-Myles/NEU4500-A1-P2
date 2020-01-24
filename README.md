@@ -23,3 +23,16 @@ Deletes the given object from array.
 
 	size_t size():
 Computes the length of the array.
+
+-----------------------------------------------------------------
+
+API for Object:
+
+	bool equals(Object o):
+Checks if the given object is equivalent to this object.
+
+	Object copy():
+Duplicates object with identical attributes.
+
+	int hashcode():
+Somputes unique identity-corresponding integer for object.
