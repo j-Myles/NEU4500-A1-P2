@@ -25,7 +25,7 @@ public:
 	Object copy();
 
 	/**
-	 * @brief computes unique indentity-corresponding integer for object
+	 * @brief computes unique identity-corresponding integer for object
 	 * 
 	 * @return int hash value
 	 */
