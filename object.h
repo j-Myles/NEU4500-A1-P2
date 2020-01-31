@@ -1,34 +1,30 @@
 #pragma once
-#include <stdbool.h>
+//lang::CwC
+
+#include <cstdlib>
 
 /**
- * @brief Parent Object Class
- * 
- */
-class Object {
+ * A class that represents the top of the object hierarchy.
+ * author: chasebish */
+class Object
+{
 public:
+	/** CONSTRUCTORS & DESTRUCTORS **/
 
-	/**
-	 * @brief checks if the given object is equivalent to this object
-	 * 
-	 * @param o given object to be compared
-	 * @return true if equivalent
-	 * @return false if non-equivalent
-	 */
-	bool equals(Object o);
+	/* Default Object constructor */
+	Object();
 
-	/**
-	 * @brief duplicates object with identical attributes
-	 * 
-	 * @return Object cloned object
-	 */
-	Object copy();
+	/* Default Object destructor, to be overriden by subclasses */
+	virtual ~Object();
 
-	/**
-	 * @brief computes unique identity-corresponding integer for object
-	 * 
-	 * @return int hash value
-	 */
-	int hashcode();
+	/** VIRTUAL METHODS **/
 
+	/* Returns whether two objects are equal, to be overriden by subclasses */
+	virtual bool equals(Object *const obj);
+
+	/* Returns an object's hash value. Identical objects should have identical hashes */
+	virtual size_t hash();
+
+	/* Returns a c string representation of the object */
+	virtual const char *to_string();
 };
